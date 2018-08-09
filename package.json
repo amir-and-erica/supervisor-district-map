@@ -1,0 +1,42 @@
+{
+  "name": "supervisormap",
+  "version": "1.0.0",
+  "description": "For https://www.bythebay.cool/supervisor-map/",
+  "private": true,
+  "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^2.3.0",
+    "@turf/intersect": "^6.1.3",
+    "mapbox-gl": "^0.47.0",
+    "polylabel": "^1.0.2",
+    "webpack-cli": "^3.1.0"
+  },
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
+    "postcss-import": "^12.0.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.22.1",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.16.5",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amir-and-erica/supervisor-district-map.git"
+  },
+  "keywords": [],
+  "author": "Jimmy Chion",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amir-and-erica/supervisor-district-map/issues"
+  },
+  "homepage": "https://github.com/amir-and-erica/supervisor-district-map#readme"
+}
