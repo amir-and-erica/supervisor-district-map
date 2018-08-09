@@ -1,7 +1,7 @@
-## SF District Supervisor map with Mapbox
-Mapbox base map:  [https://api.mapbox.com/styles/v1/bythebaydotcool/cjkk9y9mk5en52qmw32fh7uo7.html?fresh=true&title=true&access_token=pk.eyJ1IjoiYnl0aGViYXlkb3Rjb29sIiwiYSI6ImNqajh5eDEwbTMxOXIza3Q0dmhxNnowemkifQ.kgcdaQINw8_7719QVmmT-w#13.8/37.750205/-122.434012/0](Here)
+# SF District Supervisor map with Mapbox
+Mapbox base map:  [Here](https://api.mapbox.com/styles/v1/bythebaydotcool/cjkk9y9mk5en52qmw32fh7uo7.html?fresh=true&title=true&access_token=pk.eyJ1IjoiYnl0aGViYXlkb3Rjb29sIiwiYSI6ImNqajh5eDEwbTMxOXIza3Q0dmhxNnowemkifQ.kgcdaQINw8_7719QVmmT-w#13.8/37.750205/-122.434012/0)
 
-data from: [https://data.sfgov.org/Geographic-Locations-and-Boundaries/Current-Supervisor-Districts/8nkz-x4ny](SF Data)
+data from: [SF data](https://data.sfgov.org/Geographic-Locations-and-Boundaries/Current-Supervisor-Districts/8nkz-x4ny)
 
 ## To run locally
 Clone into onto your local machine
@@ -18,7 +18,7 @@ Install dependencies
 npm install
 ```
 
-Run python simpleserver
+Run python simple server
 ```python -m SimpleHTTPServer 8000```
 
 navigate to `localhost:8000` in browser
