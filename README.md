@@ -1,23 +1,30 @@
 ## SF District Supervisor map with Mapbox
-Mapbox base map: [[https://api.mapbox.com/styles/v1/bythebaydotcool/cjkk9y9mk5en52qmw32fh7uo7.html?fresh=true&title=true&access_token=pk.eyJ1IjoiYnl0aGViYXlkb3Rjb29sIiwiYSI6ImNqajh5eDEwbTMxOXIza3Q0dmhxNnowemkifQ.kgcdaQINw8_7719QVmmT-w#13.8/37.750205/-122.434012/0]]
+Mapbox base map:  [https://api.mapbox.com/styles/v1/bythebaydotcool/cjkk9y9mk5en52qmw32fh7uo7.html?fresh=true&title=true&access_token=pk.eyJ1IjoiYnl0aGViYXlkb3Rjb29sIiwiYSI6ImNqajh5eDEwbTMxOXIza3Q0dmhxNnowemkifQ.kgcdaQINw8_7719QVmmT-w#13.8/37.750205/-122.434012/0](Here)
 
-data from: [[https://data.sfgov.org/Geographic-Locations-and-Boundaries/Current-Supervisor-Districts/8nkz-x4ny]]
+data from: [https://data.sfgov.org/Geographic-Locations-and-Boundaries/Current-Supervisor-Districts/8nkz-x4ny](SF Data)
 
-## to run locally
-clone into onto your local machine
+## To run locally
+Clone into onto your local machine
+```
+git clone https://github.com/amir-and-erica/supervisor-district-map
+```
+Navigate to directory
+```
+cd supervisor-district-map
+```
 
-navigate to directory
+Install dependencies
+```
+npm install
+```
 
-install dependencies
-`npm install`
-
-run python simpleserver
-`python -m SimpleHTTPServer 8000`
+Run python simpleserver
+```python -m SimpleHTTPServer 8000```
 
 navigate to `localhost:8000` in browser
 
-## to develop locally
-requires browserify and watchify install
+## To develop locally
+Requires browserify and watchify install
 ```
 npm install -g browserify
 npm install -g watchify
