@@ -1,7 +1,9 @@
-const mapboxgl = require('mapbox-gl')
-const MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
-const polylabel = require('polylabel')
-var intersect = require('@turf/intersect');
+import mapboxgl from 'mapbox-gl'
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
+import polylabel from 'polylabel'
+import intersect from '@turf/intersect'
+import './style.css'
+import './mapbox-gl-geocoder.v2.3.0.css'
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYnl0aGViYXlkb3Rjb29sIiwiYSI6ImNqajh5eDEwbTMxOXIza3Q0dmhxNnowemkifQ.kgcdaQINw8_7719QVmmT-w';
 
@@ -198,7 +200,7 @@ map.on('load', () => {
 
    //-- after any interaction, trigger the calculation after 300ms
    map.on('moveend', function(e) {
-    var tileLoad = setInterval(function() {
+    let tileLoad = setInterval(function() {
         if (map.loaded()) {
             dyLabels(map);
             clearInterval(tileLoad);
@@ -210,14 +212,14 @@ map.on('load', () => {
 //thanks https://medium.com/@yixu0215/dynamic-label-placement-with-mapbox-gl-js-turf-polylabel-1f84f1d4bf6b
 function dyLabels(map) {
     districtCentroid.features = [];
-    var nbhdFeatures = map.queryRenderedFeatures({
+    const nbhdFeatures = map.queryRenderedFeatures({
         layers: ["supervisor-fill"]
     });
 
-    var mapSW = map.getBounds()._sw;
-    var mapNE = map.getBounds()._ne;
+    const mapSW = map.getBounds()._sw;
+    const mapNE = map.getBounds()._ne;
 
-    var mapViewBound = {
+    const mapViewBound = {
         type: "Feature",
         geometry: {
           type: "Polygon",
@@ -233,26 +235,26 @@ function dyLabels(map) {
         }
     };
 
-    var visualCenterList = [];
+    let visualCenterList = [];
 
-    var fixedLabelFilter = ["!in", "supervisor"];
+    const fixedLabelFilter = ["!in", "supervisor"];
 
-    var neighborhoods = groupBy(nbhdFeatures, nbhdFeature => nbhdFeature.properties.supervisor);
+    const neighborhoods = groupBy(nbhdFeatures, nbhdFeature => nbhdFeature.properties.supervisor);
     neighborhoods.forEach(function(value, key) {
       fixedLabelFilter.push(key);
       // console.log(key);
-      var visualCenter = value.map(obj => getVisualCenter(obj, mapViewBound));
+      let visualCenter = value.map(obj => getVisualCenter(obj, mapViewBound));
       if (visualCenter.clean().length) {
           visualCenterList.push(visualCenter.clean());
       }
     });
     visualCenterList.map(obj => {
-        var coordinatesList = [];
+        let coordinatesList = [];
         obj.forEach(function(feature){
             coordinatesList.push(feature.geometry.coordinates);
         });
-        var center = getCenter(coordinatesList);
-        var neighborhoodCenterFeature = {
+        let center = getCenter(coordinatesList);
+        let neighborhoodCenterFeature = {
             type: "Feature",
             geometry: {
                 type: "Point",
@@ -274,10 +276,10 @@ function dyLabels(map) {
 //
 // groupBy function
 function groupBy(list, keyGetter) {
-    var map = new Map();
+    let map = new Map();
     list.forEach(function(item) {
-        var key = keyGetter(item);
-        var collection = map.get(key);
+        const key = keyGetter(item);
+        let collection = map.get(key);
         if (!collection) {
             map.set(key, [item]);
         } else {
@@ -290,9 +292,9 @@ function groupBy(list, keyGetter) {
 // get visual center
 function getVisualCenter(feature, mapViewBound) {
     if (feature.geometry.type == "Polygon") {
-        var intersection = intersect.default(mapViewBound, feature.geometry);
+        let intersection = intersect(mapViewBound, feature.geometry);
         if (intersection) {
-            var visualCenter = {
+            let visualCenter = {
                 type: "Feature",
                 geometry: {
                     type: "Point",
@@ -321,20 +323,20 @@ function getVisualCenter(feature, mapViewBound) {
 
 // get the center of a coordinates list
 function getCenter(coordinates) {
-    var lngList = [];
-    var latList = [];
+    let lngList = [];
+    let latList = [];
     coordinates.map(coordinate => {
         lngList.push(coordinate[0]);
         latList.push(coordinate[1]);
     });
-    var meanLng = lngList.reduce((p,c) => p + c, 0) / lngList.length;
-    var meanLat = latList.reduce((p,c) => p + c, 0) / latList.length;
+    let meanLng = lngList.reduce((p,c) => p + c, 0) / lngList.length;
+    let meanLat = latList.reduce((p,c) => p + c, 0) / latList.length;
     return [meanLng, meanLat];
 }
 
 // remove undefined from an array
 Array.prototype.clean = function() {
-  for (var i = 0; i < this.length; i++) {
+  for (let i = 0; i < this.length; i++) {
     if (!this[i]) {
       this.splice(i, 1);
       i--;
