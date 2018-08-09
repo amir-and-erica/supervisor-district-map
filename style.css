@@ -1,0 +1,31 @@
+body {
+  margin:0;
+  padding:0;
+}
+
+.container {
+  position: relative;
+}
+
+.map-container {
+  display: block;
+  background-color: #eee;
+}
+
+#map {
+  position: absolute;
+  display: block;
+  top: 50px;
+  bottom: 0;
+  width:80%;
+  height:600px;
+  background-color: #6A99A9;
+}
+.geocoder {
+  display: block;
+  z-index:1;
+  width:20%;
+}
+.mapboxgl-ctrl-geocoder {
+  min-width:100%;
+}

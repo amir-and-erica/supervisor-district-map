@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>SF Supervisor Districts</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <!-- <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' /> -->
+  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
+  <link rel='stylesheet' href='./style.css' type='text/css' />
+</head>
+
+<body>
+  <div>
+    <h1>What SF district do I live in?</h1>
+    <h2>Just to be clear, this is just your Supervisor district</h2>
+    <div>To find your BART district, Congressional district, state senate district, or state assembly district please use the <a target="_blank" rel="noopener noreferrer" href="https://sfelections.org/tools/districts_lookup/">official election tool.</a></div>
+    <div>Data from <a target="_blank" rel="noopener noreferrer" href="https://datasf.org/opendata/">SF Open Data</a> (data last updated Jan 8, 2018)</div>
+  </div>
+  <div class="container">
+    <div class="map-container">
+      <div id='map'></div>
+    </div>
+    <div id='geocoder' class='geocoder'></div>
+  </div>
+  <script src="bundle.js"></script>
+</body>
+</html>
