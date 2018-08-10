@@ -15,10 +15,11 @@ body {
 #map {
   position: absolute;
   display: block;
+  border-radius: 4px;
   top: 50px;
   bottom: 0;
-  width:80%;
-  height:600px;
+  width:50%;
+  height:400px;
   background-color: #6A99A9;
 }
 .geocoder {

@@ -1,4 +1,4 @@
-// import mapboxgl from 'mapbox-gl'
+// import mapboxgl from 'mapbox-gl' //--too large! relying on gzipped CDN for this, to preload it as well
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
 import polylabel from 'polylabel'
 import intersect from '@turf/intersect'

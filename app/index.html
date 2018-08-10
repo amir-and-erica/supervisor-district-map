@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>SF Supervisor Districts</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script rel="preload" src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
+  <!-- <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' /> -->
+  <!-- <link rel='stylesheet' href='style.css' type='text/css' /> -->
+  <!-- <link rel='stylesheet' href='mapbox-gl-geocoder.v2.3.0.css' type='text/css' /> -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "name": "By The Bay",
+    "alternateName": "By The Bay tools",
+    "headline":"Find your supervisor",
+    "url": "https://www.bythebay.cool/find-your-district/",
+    "copyrightYear":"2018",
+    "keywords":"SF, Supervisor, District",
+    "description":"Find what district you're in",
+    "creator":{
+      "@type": "Organization",
+      "name": "By The Bay",
+      "description": "By The Bay provides local political and election information for the Bay Area in California",
+      "email": "hi@bytheybay.cool",
+      "contactPoint": [
+          {
+          "@type": "ContactPoint",
+          "telephone": "+1 (415) 617-5970",
+          "contactType": "customer service"
+          }
+      ],
+      "founder": ["Jimmy Chion", "Yvonne Leow"],
+      "logo": "https://s3-us-west-1.amazonaws.com/bythebay.cool/static/media/touch-icon-192x192.e8ebf5db.png",
+      "sameAs": [
+          "https://www.facebook.com/bythebaydotcool/",
+        "https://twitter.com/bythebaydotcool/",
+        "https://www.instagram.com/bythebaydotcool/"
+      ]
+    },
+    "image":{
+      "@type":"ImageObject",
+      "representativeOfPage":"true",
+      "URL": "https://s3.amazonaws.com/ballot.fyi/static/img/share-twit.png"
+    }
+  }
+  </script>
+
+</head>
+
+<body>
+  <div>
+    <h1>What SF district am I in?</h1>
+    <h2>Just to be clear, this is just your Supervisor district</h2>
+    <div>Just to be clear, this is just your Supervisor district. To find your BART district, Congressional district, state senate district, or state assembly district please use the <a target="_blank" rel="noopener noreferrer" href="https://sfelections.org/tools/districts_lookup/">official election tool.</a></div>
+  </div>
+  <div class="container">
+    <div class="map-container">
+      <div id='map'></div>
+    </div>
+    <div id='geocoder' class='geocoder'></div>
+  </div>
+  <div>Data from <a target="_blank" rel="noopener noreferrer" href="https://datasf.org/opendata/">SF Open Data</a> (data last updated Jan 8, 2018)</div>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -11,6 +11,7 @@
     "webpack-cli": "^3.1.0"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.2",
@@ -26,7 +27,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode=development --open",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production && cp app/index.html dist/index.html"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
   "keywords": [],
   "author": "Jimmy Chion",
   "license": "ISC",
+  "sideEffects": false,
   "bugs": {
     "url": "https://github.com/amir-and-erica/supervisor-district-map/issues"
   },
