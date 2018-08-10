@@ -1,9 +1,10 @@
-import mapboxgl from 'mapbox-gl'
+// import mapboxgl from 'mapbox-gl'
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
 import polylabel from 'polylabel'
 import intersect from '@turf/intersect'
 import './style.css'
 import './mapbox-gl-geocoder.v2.3.0.css'
+
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYnl0aGViYXlkb3Rjb29sIiwiYSI6ImNqajh5eDEwbTMxOXIza3Q0dmhxNnowemkifQ.kgcdaQINw8_7719QVmmT-w';
 
