@@ -2,7 +2,9 @@ const path = require('path');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 
 const devMode = process.env.NODE_ENV !== 'production'
 
@@ -26,6 +28,16 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css"
     }),
+    new HtmlWebpackPlugin({
+      template: 'app/index.html',
+      hash: true,
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        minifyJS: true,
+      },
+    }),
+    new CleanWebpackPlugin(['dist']),
   ],
   module: {
     rules: [
