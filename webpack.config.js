@@ -11,7 +11,7 @@ const devMode = process.env.NODE_ENV !== 'production'
 module.exports = {
   entry: './src/index.js',
   devServer: {
-   contentBase: './dist'
+   contentBase: 'dist'
   },
   optimization: {
     minimizer: [
